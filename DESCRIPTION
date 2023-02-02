@@ -1,21 +1,26 @@
 Package: ruijter
 Type: Package
-Title: Technical data sets by 'Ruijter et al.' (2013)
-Version: 0.1.0
+Title: Technical Data Sets by 'Ruijter et al.' (2013)
+Version: 0.1.1
 Authors@R: c(
     person(given = "Ramiro", family = "Magno", email = "ramiro.magno@gmail.com",
     role = c("aut", "cre"), comment = c(ORCID = "0000-0001-5226-3441")),
     person("Pattern Institute",
     role = c("cph", "fnd"))
     )
-Description: The technical data sets by 'Ruijter et al.' (2013)
+Description: The real-time quantitative polymerase chain reaction
+    ('PCR') technical data sets by 'Ruijter et al.' (2013)
     <doi:10.1016/j.ymeth.2012.08.011>: (i) the four-point 10-fold dilution
     series; (ii) 380 replicates; and (iii) the 'competimer' data set. These
-    three data sets can be used to benchmark qPCR methods.
+    three data sets can be used to benchmark 'qPCR' methods. Original data set
+    is available at
+    <https://medischebiologie.nl/wp-content/uploads/2019/02/qpcrdatamethods.zip>.
+    This package fixes incorrect annotations in the original data sets.
 License: CC BY 4.0
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
+Roxygen: list(markdown = TRUE)
 Depends: 
     R (>= 2.10)
 URL: https://github.com/ramiromagno/ruijter

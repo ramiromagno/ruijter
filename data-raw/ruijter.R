@@ -56,6 +56,14 @@ ds_94_4_02 <-
 #
 # 384 replicates data set
 #
+# WARNING: In the original paper, this data set was annotated with 15,000 copies
+# but after inspection of the curves and comparison with those of the
+# 94 replicates 4 dilutions data set, as well as after an email exchange with
+# Prof. Jo Vandesompele, it seems that this might have been a mistake. The most
+# likely scenario is that these curves are 10x more concentrated than the most
+# concentration dilution in the 94x4 data set, i.e. 150,000 copies. Therefore,
+# in the code below will witness the use of `150000` instead of `15000` as
+# indicated in the paper.
 ds_380_ntc <- c("359", "360", "383", "384")
 ds_380_01 <- read_amplification_data(data_file_path, sheets[2])
 ds_380_02 <-
@@ -78,9 +86,9 @@ ds_380_02 <-
     copies = dplyr::if_else(
       replicate %in% ds_380_ntc,
       0L,
-      15000L
+      150000L
     ),
-    dilution = 15000 / copies
+    dilution = 150000 / copies
   ) %>%
   dplyr::relocate(well,
                   replicate,

@@ -4,17 +4,28 @@
 # ruijter
 
 <!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ruijter)](https://CRAN.R-project.org/package=ruijter)
 <!-- badges: end -->
 
 `{ruijter}` is an R data package that provides the real-time qPCR
 technical data sets used in [Ruijter et al.
-(2013)](https://doi.org/10.1016/j.ymeth.2012.08.011), namely:
+(2013)](https://doi.org/10.1016/j.ymeth.2012.08.011) in tidy format,
+namely:
 
--   The 94-replicates-4-dilutions data set: `ds_94_4`
--   The 380 replicates data set: `ds_380`
--   The competimer data set: `ds_competimer`
+- The 94-replicates-4-dilutions data set: `ds_94_4`
+- The 380 replicates data set: `ds_380`
+- The competimer data set: `ds_competimer`
 
 ## Installation
+
+Install `{ruijter}` from CRAN:
+
+``` r
+# Install from CRAN
+install.packages("ruijter")
+```
 
 You can install the development version of `{ruijter}` like so:
 
@@ -56,13 +67,14 @@ dplyr::count(ds_94_4, well, replicate, sample_type, copies)
 #>  9 A9    4         std          15000    45
 #> 10 A10   4         std            150    45
 #> # … with 374 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
 
 ds_94_4 %>%
   ggplot(mapping = aes(x = cycle, y = fluor, group = well, col = as.character(copies))) +
   geom_line(size = 0.1) +
   labs(y = "Raw fluorescence", colour="Copy number", title = "Four-point 10-fold dilution series") +
   guides(color = guide_legend(override.aes = list(size = 0.5)))
+#> Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+#> ℹ Please use `linewidth` instead.
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
@@ -74,29 +86,28 @@ head(ds_380)
 #> # A tibble: 6 × 9
 #>   well  replicate dye   target sample_type copies dilution cycle fluor
 #>   <fct> <fct>     <fct> <fct>  <fct>        <int>    <dbl> <int> <dbl>
-#> 1 A1    1         SYBR  MYCN   std          15000        1     1 4340.
-#> 2 A1    1         SYBR  MYCN   std          15000        1     2 4365.
-#> 3 A1    1         SYBR  MYCN   std          15000        1     3 4381.
-#> 4 A1    1         SYBR  MYCN   std          15000        1     4 4386.
-#> 5 A1    1         SYBR  MYCN   std          15000        1     5 4398.
-#> 6 A1    1         SYBR  MYCN   std          15000        1     6 4400.
+#> 1 A1    1         SYBR  MYCN   std         150000        1     1 4340.
+#> 2 A1    1         SYBR  MYCN   std         150000        1     2 4365.
+#> 3 A1    1         SYBR  MYCN   std         150000        1     3 4381.
+#> 4 A1    1         SYBR  MYCN   std         150000        1     4 4386.
+#> 5 A1    1         SYBR  MYCN   std         150000        1     5 4398.
+#> 6 A1    1         SYBR  MYCN   std         150000        1     6 4400.
 
 dplyr::count(ds_380, well, replicate, sample_type, copies)
 #> # A tibble: 384 × 5
 #>    well  replicate sample_type copies     n
 #>    <fct> <fct>     <fct>        <int> <int>
-#>  1 A1    1         std          15000    45
-#>  2 A2    2         std          15000    45
-#>  3 A3    3         std          15000    45
-#>  4 A4    4         std          15000    45
-#>  5 A5    5         std          15000    45
-#>  6 A6    6         std          15000    45
-#>  7 A7    7         std          15000    45
-#>  8 A8    8         std          15000    45
-#>  9 A9    9         std          15000    45
-#> 10 A10   10        std          15000    45
+#>  1 A1    1         std         150000    45
+#>  2 A2    2         std         150000    45
+#>  3 A3    3         std         150000    45
+#>  4 A4    4         std         150000    45
+#>  5 A5    5         std         150000    45
+#>  6 A6    6         std         150000    45
+#>  7 A7    7         std         150000    45
+#>  8 A8    8         std         150000    45
+#>  9 A9    9         std         150000    45
+#> 10 A10   10        std         150000    45
 #> # … with 374 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
 
 ds_380 %>%
   ggplot(mapping = aes(x = cycle, y = fluor, group = well, col = as.factor(copies))) +
@@ -136,7 +147,6 @@ dplyr::count(ds_competimer, well, pct, conc, replicate, sample_type)
 #>  9 <NA>      0 0.25   3         std            45
 #> 10 <NA>      0 1      1         std            45
 #> # … with 137 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
 
 ds_competimer %>%
   ggplot(mapping = aes(x = cycle, y = fluor, group = interaction(pct, conc, replicate), col = interaction(pct, conc))) +
@@ -147,27 +157,6 @@ ds_competimer %>%
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
-
-## Admonition
-
--   The original data on which data set `ds_94_4` is based seems to have
-    incorrect annotated the standards’ copy numbers. The order seems to
-    be reversed after visual inspection of the curves, e.g., the late
-    curves, emerging around cycle 32, are annotated with 15,000 copies
-    of starting material. This is totally the reverse expectation. So in
-    `{ruijter}` we have fixed this issue by reversing the annotation:
-    -   `15` becomes `15,000`
-    -   `150` becomes `1,500`
-    -   `1,500` becomes `150`
-    -   `15,000` becomes `15`
--   The data set `ds_380` which comprises (almost) of replicates at copy
-    number `15,000` also does not seem to meet the expectation given the
-    curves of the same dilution level in `ds_94_4`. The curves in
-    `ds_380` rise earlier, and hence seem to correspond to a higher
-    concentration than those of `ds_94_4`. At the moment, no correction
-    has been performed but we will investigate this further to
-    understand if this discrepancy also corresponds to an obvious
-    mistake.
 
 ## Terms of use
 

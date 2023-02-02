@@ -17,11 +17,12 @@ library(tidyverse)
 # ruijter
 
 <!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/ruijter)](https://CRAN.R-project.org/package=ruijter)
 <!-- badges: end -->
 
 `{ruijter}` is an R data package that provides the real-time qPCR technical data
 sets used in [Ruijter et al.
-(2013)](https://doi.org/10.1016/j.ymeth.2012.08.011), namely:
+(2013)](https://doi.org/10.1016/j.ymeth.2012.08.011) in tidy format, namely:
 
 - The 94-replicates-4-dilutions data set: `ds_94_4`
 - The 380 replicates data set: `ds_380`
@@ -29,6 +30,13 @@ sets used in [Ruijter et al.
 
 
 ## Installation
+
+Install `{ruijter}` from CRAN:
+
+``` r
+# Install from CRAN
+install.packages("ruijter")
+```
 
 You can install the development version of `{ruijter}` like so:
 
@@ -84,21 +92,6 @@ ds_competimer %>%
   labs(y = "Raw fluorescence", title = "Competimer data set") +
   facet_grid(rows = vars(pct), cols = vars(conc))
 ```
-
-## Admonition
-
-- The original data on which data set `ds_94_4` is based seems to have incorrect annotated the standards' copy numbers. The order seems to be reversed after visual inspection of the curves, e.g., the late curves, emerging around cycle 32, are annotated with 15,000 copies of starting material. This is totally the reverse expectation. So in `{ruijter}` we have fixed this issue by reversing the annotation:
-  - `15` becomes `15,000`
-  - `150` becomes `1,500`
-  - `1,500` becomes `150`
-  - `15,000` becomes `15`
-
-- The data set `ds_380` which comprises (almost) of replicates at copy number
-`15,000` also does not seem to meet the expectation given the curves of the same
-dilution level in `ds_94_4`. The curves in `ds_380` rise earlier, and hence seem
-to correspond to a higher concentration than those of `ds_94_4`. At the moment,
-no correction has been performed but we will investigate this further to
-understand if this discrepancy also corresponds to an obvious mistake.
 
 ## Terms of use
 
