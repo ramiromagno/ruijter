@@ -41,7 +41,7 @@ DNA (Roche), starting from 64 ng/µl down to 0.0625 ng/µl, was created in 10
 ng/µl yeast tRNA as carrier. The same dilution of the carrier was used to
 create a NTC sample.
 
-qPCR ampliﬁcations were performed in 7.5 µl total reaction volume containing:
+qPCR amplifications were performed in 7.5 µl total reaction volume containing:
 \itemize{
 \item 3.75 µl 2x custom made qPCR SYBR green I Mastermix (Eurogentec)
 \item 0.375 µl forward primer (5 µM) and 0.375 µl reverse primer (5 µM)

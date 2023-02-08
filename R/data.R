@@ -59,7 +59,7 @@
 #' @description
 #' The 380-replicates set is a dilution consisting of 150,000 molecules (see the
 #' Admonition section below) of the MYCN oligonucleotide was created in 10 ng/µl
-#' yeast tRNA carrier. qPCR ampliﬁcations were performed in 380 replicated 8 µl
+#' yeast tRNA carrier. qPCR amplifications were performed in 380 replicated 8 µl
 #' reactions and quadruplicated reactions of the NTC sample were performed on
 #' the same 384-well plate.
 #'
@@ -116,7 +116,7 @@
 #' ng/µl yeast tRNA as carrier. The same dilution of the carrier was used to
 #' create a NTC sample.
 #'
-#' qPCR ampliﬁcations were performed in 7.5 µl total reaction volume containing:
+#' qPCR amplifications were performed in 7.5 µl total reaction volume containing:
 #' - 3.75 µl 2x custom made qPCR SYBR green I Mastermix (Eurogentec)
 #' - 0.375 µl forward primer (5 µM) and 0.375 µl reverse primer (5 µM)
 #' - 1 µl of a mixture of nuclease-free water and equal amounts of both forward and reverse competitive (aminated) primers

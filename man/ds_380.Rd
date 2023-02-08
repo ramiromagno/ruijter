@@ -32,7 +32,7 @@ ds_380
 \description{
 The 380-replicates set is a dilution consisting of 150,000 molecules (see the
 Admonition section below) of the MYCN oligonucleotide was created in 10 ng/µl
-yeast tRNA carrier. qPCR ampliﬁcations were performed in 380 replicated 8 µl
+yeast tRNA carrier. qPCR amplifications were performed in 380 replicated 8 µl
 reactions and quadruplicated reactions of the NTC sample were performed on
 the same 384-well plate.
 
