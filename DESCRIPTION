@@ -1,7 +1,7 @@
 Package: ruijter
 Type: Package
 Title: Technical Data Sets by 'Ruijter et al.' (2013)
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person(given = "Ramiro", family = "Magno", email = "ramiro.magno@gmail.com",
     role = c("aut", "cre"), comment = c(ORCID = "0000-0001-5226-3441")),
