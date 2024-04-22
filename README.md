@@ -66,7 +66,7 @@ dplyr::count(ds_94_4, well, replicate, sample_type, copies)
 #>  8 A8    3         std            150    45
 #>  9 A9    4         std          15000    45
 #> 10 A10   4         std            150    45
-#> # … with 374 more rows
+#> # ℹ 374 more rows
 
 ds_94_4 %>%
   ggplot(mapping = aes(x = cycle, y = fluor, group = well, col = as.character(copies))) +
@@ -75,6 +75,9 @@ ds_94_4 %>%
   guides(color = guide_legend(override.aes = list(size = 0.5)))
 #> Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 #> ℹ Please use `linewidth` instead.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
@@ -107,7 +110,7 @@ dplyr::count(ds_380, well, replicate, sample_type, copies)
 #>  8 A8    8         std         150000    45
 #>  9 A9    9         std         150000    45
 #> 10 A10   10        std         150000    45
-#> # … with 374 more rows
+#> # ℹ 374 more rows
 
 ds_380 %>%
   ggplot(mapping = aes(x = cycle, y = fluor, group = well, col = as.factor(copies))) +
@@ -146,7 +149,7 @@ dplyr::count(ds_competimer, well, pct, conc, replicate, sample_type)
 #>  8 <NA>      0 0.25   2         std            45
 #>  9 <NA>      0 0.25   3         std            45
 #> 10 <NA>      0 1      1         std            45
-#> # … with 137 more rows
+#> # ℹ 137 more rows
 
 ds_competimer %>%
   ggplot(mapping = aes(x = cycle, y = fluor, group = interaction(pct, conc, replicate), col = interaction(pct, conc))) +
