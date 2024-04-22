@@ -7,6 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/ruijter)](https://CRAN.R-project.org/package=ruijter)
+[![R-CMD-check](https://github.com/ramiromagno/ruijter/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ramiromagno/ruijter/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 `{ruijter}` is an R data package that provides the real-time qPCR
