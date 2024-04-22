@@ -40,6 +40,16 @@ remotes::install_github("ramiromagno/ruijter")
 
 ``` r
 library(ruijter)
+library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+library(ggplot2)
 
 head(ds_94_4)
 #> # A tibble: 6 × 9

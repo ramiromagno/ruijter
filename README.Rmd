@@ -11,8 +11,6 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
-library(dplyr)
-library(ggplot2)
 ```
 
 # ruijter
@@ -53,6 +51,8 @@ remotes::install_github("ramiromagno/ruijter")
 
 ```{r dpi=300, fig.width=8, fig.height=4}
 library(ruijter)
+library(dplyr)
+library(ggplot2)
 
 head(ds_94_4)
 
