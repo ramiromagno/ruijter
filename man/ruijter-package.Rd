@@ -12,6 +12,7 @@ The real-time quantitative polymerase chain reaction (qPCR) technical data sets 
 Useful links:
 \itemize{
   \item \url{https://github.com/ramiromagno/ruijter}
+  \item \url{https://rmagno.eu/ruijter/}
   \item Report bugs at \url{https://github.com/ramiromagno/ruijter/issues}
 }
 
